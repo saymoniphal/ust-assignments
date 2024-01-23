@@ -2,14 +2,13 @@
 test module word_frequency.py
 """
 import pytest
-import word_frequency
+from . import word_frequency
 
-class TestWordFrequency:
-    def test_word_frequency(self):
-        st = 'this is a test'
-        expected = [('this', 1), ('is', 1), ('a', 1), ('test', 1)]
-        assert expected == word_frequency.count_words(st)
+def test_word_frequency():
+    st = 'test is a test'
+    expected = [('a', 1), ('is', 1), ('test', 2)]
+    assert expected == word_frequency.count_words(st)
 
-    def test_word_frequency(self):
-        st = ''
-        assert {} == word_frequency.word_frequency.count_words(st)
+def test_empty_word_frequency():
+    st = ''
+    assert [] == word_frequency.count_words(st)
