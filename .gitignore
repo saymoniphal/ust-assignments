@@ -1,0 +1,8 @@
+# ignore .pyc files
+*.pyc
+
+# ignore __pychache__ dir
+/__pycache__
+
+# ignore .pytest_cache
+.pytest_cache
