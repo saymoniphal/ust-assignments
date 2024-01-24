@@ -50,3 +50,24 @@ python3 main.py --filename data/testfile.txt
 ```
 python3 main.py
 ```
+
+#### Run unit tests
+Each functions in src folder  has a unit test in test_*.py
+Use pytest to run all unit test. Run below command:
+```
+pytest
+```
+Sample output:
+````
+moniphal@krypton:~/git-tree/ust_assignments$ pytest
+================================================================================ test session starts =================================================================================
+platform linux -- Python 3.11.2, pytest-7.2.1, pluggy-1.0.0+repack
+rootdir: /home/moniphal/git-tree/ust_assignments
+collected 14 items                                                                                                                                                                   
+
+src/test_check_pwd.py ......                                                                                                                                                   [ 42%]
+src/test_circular_queue.py .....                                                                                                                                               [ 78%]
+src/test_word_frequency.py ...                                                                                                                                                 [100%]
+
+================================================================================= 14 passed in 0.03s =================================================================================
+```
