@@ -12,3 +12,7 @@ def count_words(st: str) -> dict[str, int]:
             word_counts[word] = 1
     l = [(k, v) for k, v in word_counts.items()]
     return sorted(l)
+
+def print_words_freq(st: str) -> None:
+    for wc in count_words(st):
+        print(wc)

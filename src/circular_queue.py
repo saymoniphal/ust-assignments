@@ -29,8 +29,12 @@ class CircularQueue():
     def dequeue(self) -> any:
         if not self.__queue__:
             return None
-        value = self.__queue__.pop(self.front)
-        self.front = self.front + 1
+        if self.front == self.rear: # only 1 element in queue
+            value = self.__queue__.pop(self.front)
+            self.front == self.rear == -1 # empty queue
+        else:
+            value = self.__queue__.pop(self.front)
+            self.front = self.front + 1
         return value
 
     def queueSize(self) -> int:

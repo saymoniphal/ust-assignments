@@ -10,5 +10,11 @@ def test_word_frequency():
     assert expected == word_frequency.count_words(st)
 
 def test_empty_word_frequency():
-    st = ''
-    assert [] == word_frequency.count_words(st)
+    assert [] == word_frequency.count_words('')
+
+def test_print_word_freq(capsys: pytest.CaptureFixture[str]):
+    st = 'one two one'
+    expected_out = f"('one', 2)\n('two', 1)\n"
+    word_frequency.print_words_freq('one two one')
+    capture = capsys.readouterr()
+    assert expected_out == capture.out
